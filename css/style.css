@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  background-color: peru;
+  color: rgb(26, 24, 24);
+  background-image: url(../images/beach.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #0d79ac;
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+  width:60%;
+  
+}
+.container input {
+  border: 1px solid #fff;
+  background: rgba(215, 215, 215 0);
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 8px 9px;
+  width: 50%;
+  border-radius: 5px;
+  background-color: aquamarine;
+  font-weight: bolder;
+  color:black;
+}
+.container button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgb(100, 174, 184);
+  padding: 8px 9px;
+  width: 100px;
+  border-radius: 8px;
+  color: rgb(36, 33, 33);
+  border: none;
+}
+
+.container a {
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+
+}
+
+h4{
+  font-size:30px;
+  color:aqua;
+}
+
+.ourPara {
+  display: block;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #0d7aac5d;
+}
