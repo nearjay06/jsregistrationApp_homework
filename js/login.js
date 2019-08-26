@@ -2,7 +2,7 @@ const username = document.querySelector("#name");
 const password = document.querySelector("#pass");
 const addbtn = document.querySelector(".addBtn");
 
-function createStore(){  
+function createStore() {
   let store = JSON.parse(localStorage.getItem("store"));
   if (store === null) {
     localStorage.setItem("store", JSON.stringify([]));
@@ -10,36 +10,50 @@ function createStore(){
   } else {
     return store;
   }
- }
+}
 
 createStore();
 
-function addUser() { 
+function addUser() {
   let store = createStore();
   let userNameInput = username.value.trim();
   let passWordInput = password.value.trim();
-  
 
-  if (userNameInput === ''){
-    alert ('please type a username')
-    return false; 
-  } else if (passWordInput !== passWordInput ||
-             passWordInput === '')
-    {
-    alert ('please provide a valid passsword')
+  if (userNameInput === "") {
+    alert("please type a username");
+    return false;
+  } else if (passWordInput !== passWordInput || passWordInput === "") {
+    alert("please provide a valid passsword");
     return false;
   }
-   
+
   const User = {
     username: userNameInput,
-    password: passWordInput,
-       
+    password: passWordInput
   };
   store.unshift(User);
   localStorage.setItem("store", JSON.stringify(store));
 }
 
-addbtn.onclick = addUser;
-// form.onsubmit = displayName
+function checkInfo() {
+  let store = JSON.parse(localStorage.getItem("store"));
+  for (let a = 0; a < store.length; a++) {
+    if (username.value != store[a].username) {
+      alert("username is either invalid or does not exist");
+      return false;
+    } else if (password.value != store[a].password) {
+      alert("password does not exist");
+      return false;
+    } else {
+      localStorage.setItem("username", store[a].username);
+      window.location.href = "index.html";
+
+      return true;
+    }
+  }
+}
+
+addbtn.onclick = checkInfo;
+// addbtn.onclick = addUser;
 
 
