@@ -4,7 +4,6 @@ const confirm = document.querySelector("#confirmPass");
 const addbtn = document.querySelector("#addBtn");
 const form = document.querySelector("#form");
 
-
 function createStore() {
   let store = JSON.parse(localStorage.getItem("store"));
   if (store === null) {
@@ -25,7 +24,8 @@ function addPerson() {
   if (userNameInput === ''){
     alert ('please type a username')
     return false; 
-  } else if (passWordInput !== confirmPassInput
+  } else if (passWordInput !== confirmPassInput ||
+             passWordInput == ''
   
    ){
     alert ('please provide a valid password')

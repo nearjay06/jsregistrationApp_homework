@@ -1,10 +1,8 @@
-const username = document.querySelector("#userName");
-const password = document.querySelector("#passWord");
-const addbtn = document.querySelector("#addBtn");
+const username = document.querySelector("#name");
+const password = document.querySelector("#pass");
+const addbtn = document.querySelector(".addBtn");
 
-
-
-function createStore() {
+function createStore(){  
   let store = JSON.parse(localStorage.getItem("store"));
   if (store === null) {
     localStorage.setItem("store", JSON.stringify([]));
@@ -12,68 +10,36 @@ function createStore() {
   } else {
     return store;
   }
-}
+ }
+
 createStore();
 
-function addUser() {
+function addUser() { 
   let store = createStore();
-  let userNameInput = userName.value.trim();
-  let passWordInput = passWord.value.trim();
+  let userNameInput = username.value.trim();
+  let passWordInput = password.value.trim();
   
 
-  if (userNameInput === '' 
-      ){
+  if (userNameInput === ''){
     alert ('please type a username')
     return false; 
   } else if (passWordInput !== passWordInput ||
-             passWordInput === ''
-  
-  ){
+             passWordInput === '')
+    {
     alert ('please provide a valid passsword')
     return false;
   }
-
    
-  const Person = {
+  const User = {
     username: userNameInput,
     password: passWordInput,
-    
-    
+       
   };
-  store.unshift(Person);
+  store.unshift(User);
   localStorage.setItem("store", JSON.stringify(store));
 }
 
-
 addbtn.onclick = addUser;
 // form.onsubmit = displayName
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
